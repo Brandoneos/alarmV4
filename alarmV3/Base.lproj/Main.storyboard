@@ -45,22 +45,22 @@
                                         <rect key="frame" x="0.0" y="45" width="375" height="573"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Hht-cX-jT2" detailTextLabel="Lan-7K-54S" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="8pB-hu-w8c">
-                                                <rect key="frame" x="0.0" y="44.5" width="375" height="100"/>
+                                            <tableViewCell autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="2" reuseIdentifier="myCell" textLabel="Hht-cX-jT2" detailTextLabel="Lan-7K-54S" rowHeight="68" style="IBUITableViewCellStyleSubtitle" id="8pB-hu-w8c">
+                                                <rect key="frame" x="0.0" y="44.5" width="375" height="68"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8pB-hu-w8c" id="64v-Ag-wCU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8pB-hu-w8c" id="64v-Ag-wCU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hht-cX-jT2">
-                                                            <rect key="frame" x="16" y="17" width="73.5" height="48"/>
+                                                        <label autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hht-cX-jT2">
+                                                            <rect key="frame" x="16" y="1" width="73.5" height="48"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lan-7K-54S">
-                                                            <rect key="frame" x="16" y="65" width="39.5" height="18"/>
+                                                        <label autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lan-7K-54S">
+                                                            <rect key="frame" x="16" y="49" width="39.5" height="18"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
