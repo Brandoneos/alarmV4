@@ -15,8 +15,9 @@
 		F65DD56426CEE2C5005CBDF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65DD56226CEE2C5005CBDF2 /* LaunchScreen.storyboard */; };
 		F65DD56F26CEE2C5005CBDF2 /* alarmV3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD56E26CEE2C5005CBDF2 /* alarmV3Tests.swift */; };
 		F65DD57926CEE2C5005CBDF2 /* alarmV3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD57826CEE2C5005CBDF2 /* alarmV3UITests.swift */; };
+		F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67465B226DEB6420001E6C9 /* addAlarm.swift */; };
+		F67465B526DEBE960001E6C9 /* NumberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */; };
 		F6D1BB2C26D42A5E00447E2D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1BB2B26D42A5E00447E2D /* Alarm.swift */; };
-		F6D1BB2E26D42A7400447E2D /* addNewAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1BB2D26D42A7400447E2D /* addNewAlarm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,9 @@
 		F65DD56E26CEE2C5005CBDF2 /* alarmV3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmV3Tests.swift; sourceTree = "<group>"; };
 		F65DD57426CEE2C5005CBDF2 /* alarmV3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alarmV3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65DD57826CEE2C5005CBDF2 /* alarmV3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmV3UITests.swift; sourceTree = "<group>"; };
+		F67465B226DEB6420001E6C9 /* addAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAlarm.swift; sourceTree = "<group>"; };
+		F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionCell.swift; sourceTree = "<group>"; };
 		F6D1BB2B26D42A5E00447E2D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
-		F6D1BB2D26D42A7400447E2D /* addNewAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewAlarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,9 @@
 				F65DD55926CEE2C3005CBDF2 /* SceneDelegate.swift */,
 				F65DD55B26CEE2C3005CBDF2 /* ViewController.swift */,
 				F6D1BB2B26D42A5E00447E2D /* Alarm.swift */,
-				F6D1BB2D26D42A7400447E2D /* addNewAlarm.swift */,
 				F65DD55D26CEE2C3005CBDF2 /* Main.storyboard */,
+				F67465B226DEB6420001E6C9 /* addAlarm.swift */,
+				F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */,
 				F65DD56026CEE2C5005CBDF2 /* Assets.xcassets */,
 				F65DD56226CEE2C5005CBDF2 /* LaunchScreen.storyboard */,
 				F65DD56526CEE2C5005CBDF2 /* Info.plist */,
@@ -263,9 +266,10 @@
 			files = (
 				F65DD55C26CEE2C3005CBDF2 /* ViewController.swift in Sources */,
 				F65DD55826CEE2C3005CBDF2 /* AppDelegate.swift in Sources */,
+				F67465B526DEBE960001E6C9 /* NumberCollectionCell.swift in Sources */,
+				F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */,
 				F65DD55A26CEE2C3005CBDF2 /* SceneDelegate.swift in Sources */,
 				F6D1BB2C26D42A5E00447E2D /* Alarm.swift in Sources */,
-				F6D1BB2E26D42A7400447E2D /* addNewAlarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

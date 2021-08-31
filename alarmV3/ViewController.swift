@@ -54,6 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+        
 
     }
 

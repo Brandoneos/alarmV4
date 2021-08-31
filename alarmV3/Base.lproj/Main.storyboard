@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,9 +34,7 @@
                                                 <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yed-3O-kcU">
                                                     <color key="tintColor" red="0.42352941176470588" green="1" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
-                                                        <segue destination="eBw-UT-aTh" kind="popoverPresentation" popoverAnchorBarButtonItem="Yed-3O-kcU" id="ovg-0d-tIz">
-                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                        </segue>
+                                                        <segue destination="eBw-UT-aTh" kind="show" id="Kci-bT-vp5"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -97,20 +96,95 @@
             </objects>
             <point key="canvasLocation" x="1776.8" y="86.806596701649184"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Alarm-->
         <scene sceneID="xP8-qY-JFr">
             <objects>
-                <viewController id="eBw-UT-aTh" sceneMemberID="viewController">
+                <viewController id="eBw-UT-aTh" customClass="AddAlarm" customModule="alarmV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adU-fo-nM2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bln-rX-ywJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6i-1W-ft0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
+                                        <items>
+                                            <navigationItem title="Add Alarm" id="6l3-kM-fei">
+                                                <barButtonItem key="leftBarButtonItem" title="Cancel" id="Awt-ph-cae">
+                                                    <connections>
+                                                        <action selector="cancelPressed:" destination="eBw-UT-aTh" id="Nxf-9U-Avf"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Save" id="r25-Ch-7gn">
+                                                    <connections>
+                                                        <action selector="savePressed:" destination="eBw-UT-aTh" id="K8W-MZ-FV7"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zka-3X-gxB">
+                                        <rect key="frame" x="0.0" y="303" width="375" height="216"/>
+                                    </datePicker>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SjA-hy-s8X">
+                                        <rect key="frame" x="0.0" y="519" width="375" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="swV-wn-nDg">
+                                            <size key="itemSize" width="52" height="41"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ccell" id="NhC-uw-gom" customClass="NumberCollectionCell" customModule="alarmV3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="52"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yyf-UY-WSY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-we-kdh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                        </button>
+                                                    </subviews>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="85" height="52"/>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AY6-2I-anZ">
+                                                <rect key="frame" x="16.5" y="62" width="52" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FWa-eg-SCE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="52" height="41"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RFd-nJ-wCx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RFd-nJ-wCx" firstAttribute="bottom" secondItem="bln-rX-ywJ" secondAttribute="bottom" id="9Zd-1D-tXE"/>
+                            <constraint firstItem="bln-rX-ywJ" firstAttribute="top" secondItem="RFd-nJ-wCx" secondAttribute="top" id="RC3-AX-N0x"/>
+                            <constraint firstItem="bln-rX-ywJ" firstAttribute="trailing" secondItem="RFd-nJ-wCx" secondAttribute="trailing" id="Yt8-YD-xNo"/>
+                            <constraint firstItem="bln-rX-ywJ" firstAttribute="leading" secondItem="RFd-nJ-wCx" secondAttribute="leading" id="n6A-nr-Ajx"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oRE-g5-coE"/>
+                    <connections>
+                        <outlet property="collectionView" destination="SjA-hy-s8X" id="uXC-UD-yM5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EY7-v3-Uyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2343" y="-571"/>
+            <point key="canvasLocation" x="2341.5999999999999" y="-571.66416791604206"/>
         </scene>
         <!--Timer-->
         <scene sceneID="gUf-zc-340">
