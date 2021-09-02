@@ -46,8 +46,9 @@ extension UIViewController: UICollectionViewDataSource {
     
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ccell", for: indexPath)
-//
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ccell", for: indexPath) as! NumberCollectionCell
+        cell.setup(with: numbers[indexPath.row])
+
         
         
         

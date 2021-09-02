@@ -10,6 +10,11 @@ import UIKit
 class NumberCollectionCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var numberButton: UIButton!
+    func setup(with indexRow: Int) {
+        numberButton.setTitle("\(indexRow)", for: .normal)
+        
+    }
     
     
     

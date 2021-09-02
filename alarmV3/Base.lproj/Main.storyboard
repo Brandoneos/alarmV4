@@ -108,7 +108,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6i-1W-ft0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
                                         <items>
                                             <navigationItem title="Add Alarm" id="6l3-kM-fei">
                                                 <barButtonItem key="leftBarButtonItem" title="Cancel" id="Awt-ph-cae">
@@ -125,43 +125,37 @@
                                         </items>
                                     </navigationBar>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zka-3X-gxB">
-                                        <rect key="frame" x="0.0" y="303" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="216"/>
                                     </datePicker>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SjA-hy-s8X">
-                                        <rect key="frame" x="0.0" y="519" width="375" height="128"/>
+                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" scrollEnabled="NO" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SjA-hy-s8X">
+                                        <rect key="frame" x="0.0" y="460" width="375" height="187"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="swV-wn-nDg">
-                                            <size key="itemSize" width="52" height="41"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v8b-G7-7qC">
+                                            <size key="itemSize" width="114" height="54"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ccell" id="NhC-uw-gom" customClass="NumberCollectionCell" customModule="alarmV3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="52"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="ccell" id="NhC-uw-gom" customClass="NumberCollectionCell" customModule="alarmV3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yyf-UY-WSY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="52"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="yyf-UY-WSY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="54"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-we-kdh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
+                                                        <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-we-kdh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="54"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="Button" titleAlignment="center"/>
                                                         </button>
                                                     </subviews>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="85" height="52"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AY6-2I-anZ">
-                                                <rect key="frame" x="16.5" y="62" width="52" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FWa-eg-SCE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="41"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                                <size key="customSize" width="52" height="41"/>
+                                                <size key="customSize" width="114" height="54"/>
+                                                <connections>
+                                                    <outlet property="numberButton" destination="c1b-we-kdh" id="k20-As-Uze"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
