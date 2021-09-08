@@ -127,7 +127,7 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zka-3X-gxB">
                                         <rect key="frame" x="0.0" y="244" width="375" height="216"/>
                                     </datePicker>
-                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" scrollEnabled="NO" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SjA-hy-s8X">
+                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SjA-hy-s8X">
                                         <rect key="frame" x="0.0" y="460" width="375" height="187"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v8b-G7-7qC">
@@ -155,6 +155,24 @@
                                                 <size key="customSize" width="114" height="54"/>
                                                 <connections>
                                                     <outlet property="numberButton" destination="c1b-we-kdh" id="k20-As-Uze"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="7Uz-wn-Vf1" customClass="NumberCollectionCell" customModule="alarmV3" customModuleProvider="target">
+                                                <rect key="frame" x="130.5" y="0.0" width="114" height="54"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="fXz-wG-FA8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKt-qI-c6A">
+                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="54"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="delete.left" catalog="system" imagePadding="0.0"/>
+                                                        </button>
+                                                    </subviews>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="deleteButton" destination="EKt-qI-c6A" id="S4F-4q-pVL"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -223,6 +241,7 @@
     </scenes>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
+        <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,10 +11,13 @@ class NumberCollectionCell: UICollectionViewCell {
     
     
     @IBOutlet weak var numberButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
     func setup(with indexRow: Int) {
         numberButton.setTitle("\(indexRow)", for: .normal)
         
     }
+    
     
     
     
