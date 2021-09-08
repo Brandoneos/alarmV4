@@ -13,6 +13,7 @@ class AddAlarm: UIViewController {
     
     
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -47,7 +48,11 @@ extension UIViewController: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ccell", for: indexPath) as! NumberCollectionCell
-        cell.setup(with: numbers[indexPath.row])
+        var dude = numbers[indexPath.row]
+        
+        cell.numberButton.setTitle("\(dude)", for: .normal)
+        
+        
 
         
         
