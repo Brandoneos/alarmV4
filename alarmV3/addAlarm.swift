@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+var springGreen = UIColor(red: 108/255, green: 255/255, blue: 180/255, alpha: 1)
 var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 
 class AddAlarm: UIViewController {
@@ -58,16 +58,19 @@ extension UIViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ccell", for: indexPath) as! NumberCollectionCell
             var dude = numbers[indexPath.row]
         if (dude == 13) {
-            cell.numberButton.setTitle("hi", for: .normal)
-            cell.numberButton.setImage(, for: .normal)
-            
-            
-            
-        } else if dude == 14{
             cell.numberButton.setTitle("", for: .normal)
+            var image = UIImage(named: "deleteIcon")
+            
+            cell.numberButton.setImage(UIImage(systemName: "delete.left"), for: .normal)
+            cell.numberButton.tintColor = springGreen
+        } else if (dude == 14 ) {
+            
+            cell.numberButton.setTitle("", for: .normal)
+            cell.numberButton.backgroundColor = .white
+            cell.numberButton.tintColor = springGreen
         } else {
             cell.numberButton.setTitle("\(dude)", for: .normal)
-            
+            cell.numberButton.tintColor = springGreen
         }
             
             return cell
