@@ -107,8 +107,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bln-rX-ywJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6i-1W-ft0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6i-1W-ft0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                         <items>
                                             <navigationItem title="Add Alarm" id="6l3-kM-fei">
                                                 <barButtonItem key="leftBarButtonItem" title="Cancel" id="Awt-ph-cae">
@@ -124,8 +124,14 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zka-3X-gxB">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="142"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjW-tM-gqj">
+                                        <rect key="frame" x="0.0" y="86" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="248" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zka-3X-gxB">
+                                        <rect key="frame" x="0.0" y="136.5" width="375" height="35.5"/>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jx9-Mq-g02">
                                         <rect key="frame" x="0.0" y="202" width="375" height="175"/>
