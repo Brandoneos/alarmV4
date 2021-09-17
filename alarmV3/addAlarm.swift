@@ -25,7 +25,23 @@ class AddAlarm: UIViewController {
         collectionView.dataSource = self
     }
 
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "ViewController")
+        var secondVCVC:ViewController = segue.destination as! ViewController
+        
+        secondVC.modalPresentationStyle = .fullScreen
+        
+        secondVC.modalTransitionStyle = .flipHorizontal
+        
+        present(secondVC, animated: true, completion: nil)
+    }
     @IBAction func savePressed(_ sender: Any) {
+        
+       
+//                present(secondVC, animated: true, completion: nil)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
