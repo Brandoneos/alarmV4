@@ -11,7 +11,18 @@ var alarms:[Alarm] = [Alarm(name: "Wake Up", time: 1212, onOff: true),Alarm(name
 
 
 class ViewController: UIViewController, UITableViewDataSource {
-    var receivedData = 0
+    var receivedTime:Int = 0
+    var receivedRepeat:String = ""
+    var receivedLabel:String = ""
+    var receivedSound:String = ""
+    var receivedSnooze:Bool = true
+    var receivedExtras:String = ""
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var baritem1: UITabBarItem!

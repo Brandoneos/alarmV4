@@ -328,6 +328,13 @@
                     <navigationItem key="navigationItem" id="oRE-g5-coE"/>
                     <connections>
                         <outlet property="collectionView" destination="SjA-hy-s8X" id="uXC-UD-yM5"/>
+                        <outlet property="deleteButton" destination="fh0-tR-liN" id="8DO-ty-BB6"/>
+                        <outlet property="extrasButton" destination="cOM-AJ-xh0" id="WQ0-HD-OV4"/>
+                        <outlet property="labelButton" destination="xAK-MX-Ndo" id="Tqa-a4-2Jn"/>
+                        <outlet property="repeatButton" destination="xAK-MX-Ndo" id="Eqa-Fa-orb"/>
+                        <outlet property="snoozeSwitch" destination="Hhd-ra-jEh" id="pzL-rh-yc6"/>
+                        <outlet property="soundButton" destination="xW0-xY-KdE" id="Vl5-Et-xqy"/>
+                        <outlet property="timeView" destination="zka-3X-gxB" id="LF7-ay-pYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EY7-v3-Uyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -376,7 +383,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Kci-bT-vp5"/>
         <segue reference="bGk-MY-wWv"/>
     </inferredMetricsTieBreakers>
     <resources>

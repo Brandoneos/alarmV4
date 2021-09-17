@@ -13,24 +13,34 @@ class AddAlarm: UIViewController {
     
     
     
+    @IBOutlet weak var timeView: UIDatePicker!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var repeatButton: UIButton!
     
+    @IBOutlet weak var labelButton: UIButton!
     
+    @IBOutlet weak var soundButton: UIButton!
     
+    @IBOutlet weak var snoozeSwitch: UISwitch!
+    @IBOutlet weak var extrasButton: UIButton!
     
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        
     }
-
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "ViewController")
         var secondVCVC:ViewController = segue.destination as! ViewController
+//        secondVCVC.receivedTime =
+        print(timeView.minuteInterval)
         
         secondVC.modalPresentationStyle = .fullScreen
         
