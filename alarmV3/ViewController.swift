@@ -11,7 +11,7 @@ var alarms:[Alarm] = [Alarm(name: "Wake Up", time: 1212, onOff: true),Alarm(name
 
 
 class ViewController: UIViewController, UITableViewDataSource {
-    var receivedTime:Int = 0
+    var receivedTime:String = ""
     var receivedRepeat:String = ""
     var receivedLabel:String = ""
     var receivedSound:String = ""
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         view.backgroundColor = UIColor.black
         self.setNeedsStatusBarAppearanceUpdate()
         baritem1.badgeColor = sG
-        
+        print(receivedTime)
         
     }
 

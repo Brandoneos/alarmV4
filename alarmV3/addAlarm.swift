@@ -30,6 +30,8 @@ class AddAlarm: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        timeView.datePickerMode = .time
+        
         
     }
     
@@ -39,8 +41,16 @@ class AddAlarm: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "ViewController")
         var secondVCVC:ViewController = segue.destination as! ViewController
-//        secondVCVC.receivedTime =
-        print(timeView.minuteInterval)
+        var date1 = timeView.date
+    
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let datetime = formatter.string(from: date1)
+        secondVCVC.receivedTime = datetime
+        
+        
+        
         
         secondVC.modalPresentationStyle = .fullScreen
         
