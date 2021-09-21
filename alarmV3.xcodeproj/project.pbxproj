@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F61A12A226FA696C007585D5 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A12A126FA696C007585D5 /* Repeat.swift */; };
 		F65DD55826CEE2C3005CBDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55726CEE2C3005CBDF2 /* AppDelegate.swift */; };
 		F65DD55A26CEE2C3005CBDF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55926CEE2C3005CBDF2 /* SceneDelegate.swift */; };
 		F65DD55C26CEE2C3005CBDF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55B26CEE2C3005CBDF2 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F61A12A126FA696C007585D5 /* Repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
 		F65DD55426CEE2C3005CBDF2 /* alarmV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alarmV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65DD55726CEE2C3005CBDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F65DD55926CEE2C3005CBDF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				F65DD55D26CEE2C3005CBDF2 /* Main.storyboard */,
 				F67465B226DEB6420001E6C9 /* addAlarm.swift */,
 				F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */,
+				F61A12A126FA696C007585D5 /* Repeat.swift */,
 				F65DD56026CEE2C5005CBDF2 /* Assets.xcassets */,
 				F65DD56226CEE2C5005CBDF2 /* LaunchScreen.storyboard */,
 				F65DD56526CEE2C5005CBDF2 /* Info.plist */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65DD55C26CEE2C3005CBDF2 /* ViewController.swift in Sources */,
+				F61A12A226FA696C007585D5 /* Repeat.swift in Sources */,
 				F65DD55826CEE2C3005CBDF2 /* AppDelegate.swift in Sources */,
 				F67465B526DEBE960001E6C9 /* NumberCollectionCell.swift in Sources */,
 				F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */,

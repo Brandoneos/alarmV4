@@ -40,24 +40,50 @@ class AddAlarm: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "ViewController")
-        var secondVCVC:ViewController = segue.destination as! ViewController
-        var date1 = timeView.date
-    
+        let thirdVC = storyboard.instantiateViewController(withIdentifier: "Repeat")
         
+        var date1 = timeView.date
         let formatter = DateFormatter()
         formatter.timeStyle = .short
         let datetime = formatter.string(from: date1)
-        secondVCVC.receivedTime = datetime
+        
+        
+        if (segue.identifier == "segue1") {
+            var secondVCVC:ViewController = segue.destination as! ViewController
+            secondVCVC.receivedTime = datetime
+            
+            secondVC.modalPresentationStyle = .fullScreen
+            
+            secondVC.modalTransitionStyle = .flipHorizontal
+            
+            present(secondVC, animated: true, completion: nil)
+            
+            
+        } else if  segue.identifier == "segue2" {
+            var  thirdVCVC:Repeat = segue.destination as! Repeat
+            thirdVC.modalPresentationStyle = .popover
+            
+            thirdVC.modalTransitionStyle = .coverVertical
+            
+            present(thirdVC, animated: true, completion: nil)
+            
+        }
+        
+        
+       
         
         
         
         
-        secondVC.modalPresentationStyle = .fullScreen
         
-        secondVC.modalTransitionStyle = .flipHorizontal
         
-        present(secondVC, animated: true, completion: nil)
     }
+    
+    @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
+    
     @IBAction func savePressed(_ sender: Any) {
         
        

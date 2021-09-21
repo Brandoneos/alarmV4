@@ -150,6 +150,9 @@
                                                     </attributedString>
                                                     <attributedString key="attributedSubtitle"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="oMb-gx-Oge" kind="show" identifier="segue2" id="NK3-YW-ZV2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-MX-Ndo">
                                                 <rect key="frame" x="0.0" y="35" width="375" height="35"/>
@@ -340,6 +343,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EY7-v3-Uyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2341.5999999999999" y="-571.66416791604206"/>
+        </scene>
+        <!--Repeat-->
+        <scene sceneID="9aC-UF-Rw6">
+            <objects>
+                <viewController storyboardIdentifier="Repeat" id="oMb-gx-Oge" customClass="Repeat" customModule="alarmV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ywy-kJ-vWo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDk-oG-0Wx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Repeat" id="kjJ-L8-9td">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="fHW-QM-Lxh">
+                                            <connections>
+                                                <action selector="goBack" destination="7Re-Oa-xIf" id="oFe-yF-27O"/>
+                                                <segue destination="pRl-Gv-Upp" kind="unwind" unwindAction="myUnwindDoerWithUnwindSegue:" id="GiX-wg-tnB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gDl-zD-ZRg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W0h-au-nqg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Re-Oa-xIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pRl-Gv-Upp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3032" y="-879"/>
         </scene>
         <!--Timer-->
         <scene sceneID="gUf-zc-340">
