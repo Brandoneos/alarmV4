@@ -8,18 +8,43 @@
 import Foundation
 import UIKit
 
-class Repeat:UIViewController {
+class Repeat: UIViewController {
+    @IBOutlet weak var sundayButton: UIButton!
     
     
     
     override func viewDidLoad() {
-        print("ViewController: Repeat ")
+        self.sundayButton.setImage(nil, for: .normal)
+        
+        sundayButton.contentHorizontalAlignment = .left
     }
     
    
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        //Needs to pass data of when to repeat to add alarm viewcontroller
+        
+    }
+    
+    @IBAction func sundayPressed(_ sender: UIButton) {
+        
+        
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     
 }
