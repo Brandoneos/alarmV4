@@ -9,8 +9,9 @@ import UIKit
 var springGreen = UIColor(red: 108/255, green: 255/255, blue: 180/255, alpha: 1)
 var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 
-class AddAlarm: UIViewController {
-    
+
+class addAlarm: UIViewController {
+    var selectionsPassed:[Bool] = []
     
     
     @IBOutlet weak var timeView: UIDatePicker!

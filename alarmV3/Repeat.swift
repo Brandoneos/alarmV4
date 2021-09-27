@@ -31,6 +31,7 @@ class Repeat: UIViewController {
     var selection5:Bool = true
     var selection6:Bool = true
     var selection7:Bool = true
+    var selections:[Bool] = []
     
     override func viewDidLoad() {
         
@@ -43,6 +44,7 @@ class Repeat: UIViewController {
         selection6 = false
         selection7 = false
         
+        
     }
     
    
@@ -50,6 +52,14 @@ class Repeat: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        selections = [selection1,selection2,selection3,selection4,selection5,selection6,selection7]
+        
+        var VC1:addAlarm = segue.destination as! addAlarm
+        VC1.selectionsPassed = selections
+        
+        
+        
+        
         
         
         //Needs to pass data of when to repeat to add alarm viewcontroller
