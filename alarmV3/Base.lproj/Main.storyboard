@@ -101,7 +101,7 @@
         <!--Add Alarm-->
         <scene sceneID="xP8-qY-JFr">
             <objects>
-                <viewController id="eBw-UT-aTh" customClass="AddAlarm" customModule="alarmV3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addAlarm" id="eBw-UT-aTh" customClass="addAlarm" customModule="alarmV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adU-fo-nM2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,7 +335,7 @@
                         <outlet property="deleteButton" destination="fh0-tR-liN" id="8DO-ty-BB6"/>
                         <outlet property="extrasButton" destination="cOM-AJ-xh0" id="WQ0-HD-OV4"/>
                         <outlet property="labelButton" destination="xAK-MX-Ndo" id="Tqa-a4-2Jn"/>
-                        <outlet property="repeatButton" destination="xAK-MX-Ndo" id="Eqa-Fa-orb"/>
+                        <outlet property="repeatButton" destination="wfM-2I-Fhw" id="DWH-0c-XSe"/>
                         <outlet property="snoozeSwitch" destination="Hhd-ra-jEh" id="pzL-rh-yc6"/>
                         <outlet property="soundButton" destination="xW0-xY-KdE" id="Vl5-Et-xqy"/>
                         <outlet property="timeView" destination="zka-3X-gxB" id="LF7-ay-pYu"/>

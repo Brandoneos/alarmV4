@@ -9,9 +9,11 @@ import UIKit
 var springGreen = UIColor(red: 108/255, green: 255/255, blue: 180/255, alpha: 1)
 var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 
-
+var daysOF:[String] = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 class addAlarm: UIViewController {
     var selectionsPassed:[Bool] = []
+    
+    var repeatButtonString = ""
     
     
     @IBOutlet weak var timeView: UIDatePicker!
@@ -33,8 +35,12 @@ class addAlarm: UIViewController {
         collectionView.dataSource = self
         timeView.datePickerMode = .time
         
-        
+        print(1)
     }
+    
+    
+    
+    
     
     
     
@@ -57,6 +63,11 @@ class addAlarm: UIViewController {
             
             secondVC.modalTransitionStyle = .flipHorizontal
             
+            
+            
+            
+            
+            
             present(secondVC, animated: true, completion: nil)
             
             
@@ -69,7 +80,7 @@ class addAlarm: UIViewController {
             present(thirdVC, animated: true, completion: nil)
             
         }
-        
+        segue
         
        
         

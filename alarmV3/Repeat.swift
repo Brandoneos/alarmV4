@@ -24,25 +24,31 @@ class Repeat: UIViewController {
     
     
     var theImage:UIImage = UIImage(systemName: "checkmark")!
-    var selection1:Bool = true
-    var selection2:Bool = true
-    var selection3:Bool = true
-    var selection4:Bool = true
-    var selection5:Bool = true
-    var selection6:Bool = true
-    var selection7:Bool = true
+    var selection1:Bool = false
+    var selection2:Bool = false
+    var selection3:Bool = false
+    var selection4:Bool = false
+    var selection5:Bool = false
+    var selection6:Bool = false
+    var selection7:Bool = false
     var selections:[Bool] = []
     
     override func viewDidLoad() {
         
         
-        selection1 = false
-        selection2 = false
-        selection3 = false
-        selection4 = false
-        selection5 = false
-        selection6 = false
-        selection7 = false
+       
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if selection1 {
+            sundayButton.setImage(UIImage(systemName: "checkmark.seal.fill")!, for: .normal)
+        } else {
+            sundayButton.setImage(UIImage(systemName: "checkmark.seal")!, for: .normal)
+        }
+        
+        //trying to make choices saved
+        
         
         
     }
@@ -51,11 +57,37 @@ class Repeat: UIViewController {
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
         
     }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         selections = [selection1,selection2,selection3,selection4,selection5,selection6,selection7]
         
         var VC1:addAlarm = segue.destination as! addAlarm
+        
+        
         VC1.selectionsPassed = selections
+        VC1.repeatButtonString = ""
+        if VC1.selectionsPassed.isEmpty {
+            VC1.repeatButton.setTitle("Repeat" + "(Never)", for: .normal)
+        } else {
+            var start = 0
+            for i in VC1.selectionsPassed {
+                
+                if i == true {
+                    
+                    VC1.repeatButtonString += daysOF[start]
+                    
+                    VC1.repeatButtonString += ","
+                }
+                
+                start += 1
+            }
+            
+            
+            VC1.repeatButton.setTitle("Repeat" + "(" + "\(VC1.repeatButtonString)" + ")", for: .normal)
+            
+        }
         
         
         
