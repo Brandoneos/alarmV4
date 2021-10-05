@@ -116,13 +116,18 @@ class Repeat: UIViewController {
             VC1.repeatButton.setTitle("Repeat" + "(Never)", for: .normal)
         } else {
             var start = 0
+            var ind = false
             for i in VC1.selectionsPassed {
                 
                 if i == true {
                 
-                    VC1.repeatButtonString += daysOF[start]
+                    if ind {
+                        VC1.repeatButtonString += ","
+                    }
                     
-                    VC1.repeatButtonString += ","
+                    VC1.repeatButtonString += daysOF[start]
+                    ind = true
+                    
                     
                 }
                 
