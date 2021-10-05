@@ -11,6 +11,8 @@ var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 
 var daysOF:[String] = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 class addAlarm: UIViewController {
+    
+   
     var selectionsPassed:[Bool] = []
     
     var repeatButtonString = ""
@@ -35,7 +37,7 @@ class addAlarm: UIViewController {
         collectionView.dataSource = self
         timeView.datePickerMode = .time
         
-        print(1)
+        
     }
     
     

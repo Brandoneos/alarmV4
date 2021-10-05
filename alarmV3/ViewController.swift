@@ -6,6 +6,9 @@
 //
 
 import UIKit
+
+
+
 var alarms:[Alarm] = [Alarm(name: "Wake Up", time: 1212, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true)]
 //n
 
