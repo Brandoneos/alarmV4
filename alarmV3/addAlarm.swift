@@ -9,8 +9,10 @@ import UIKit
 var springGreen = UIColor(red: 108/255, green: 255/255, blue: 180/255, alpha: 1)
 var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 
+
 var daysOF:[String] = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 class addAlarm: UIViewController {
+    var emptyArray:[Int] = [0,0,0,0,0,0,0]
     
    
     var selectionsPassed:[Bool] = []
@@ -18,12 +20,13 @@ class addAlarm: UIViewController {
     var repeatButtonString = ""
     
     
+    @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var timeView: UIDatePicker!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var repeatButton: UIButton!
     
-    @IBOutlet weak var labelButton: UIButton!
+    
     
     @IBOutlet weak var soundButton: UIButton!
     
@@ -36,6 +39,7 @@ class addAlarm: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         timeView.datePickerMode = .time
+        
         
         
     }
@@ -58,15 +62,63 @@ class addAlarm: UIViewController {
         
         
         if (segue.identifier == "segue1") {
+            print(datetime)
             var secondVCVC:ViewController = segue.destination as! ViewController
+            
+            
             secondVCVC.receivedTime = datetime
+            var te = ""
+            if titleField.text == "" {
+                te = "Untitled"
+            } else {
+                te = titleField.text!
+            }
+            
+                
+            
+            
+            var s = 0
+            var endString = ""
+            for i in emptyArray {
+                
+                if repeatButtonString.contains(daysOF[s]) {
+                    emptyArray[s] = 1
+                }
+                endString += "\(emptyArray[s])"
+                s += 1
+                
+    
+            }
+            
+            
+            
+            
+            var endInt = Int(endString)!
+            
+            var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
+            secondVCVC.alarms.append(newAlarm)
+            
+            
+            
+            
+            
+            //resets for next alarm made
+            
+            defaults1.set(false, forKey: "selection1")
+            defaults1.set(false, forKey: "selection2")
+            defaults1.set(false, forKey: "selection3")
+            defaults1.set(false, forKey: "selection4")
+            defaults1.set(false, forKey: "selection5")
+            defaults1.set(false, forKey: "selection6")
+            defaults1.set(false, forKey: "selection7")
             
             secondVC.modalPresentationStyle = .fullScreen
             
             secondVC.modalTransitionStyle = .flipHorizontal
             
             
-            
+//            var newAlarm = Alarm(name: <#T##String#>, time: <#T##Int#>, onOff: true,)
+//            var newAlarm1 = Alarm()
             
             
             
@@ -82,7 +134,7 @@ class addAlarm: UIViewController {
             present(thirdVC, animated: true, completion: nil)
             
         }
-        segue
+        
         
        
         
@@ -99,6 +151,8 @@ class addAlarm: UIViewController {
     
     
     @IBAction func savePressed(_ sender: Any) {
+        
+        
         
        
 //                present(secondVC, animated: true, completion: nil)

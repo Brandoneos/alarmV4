@@ -9,11 +9,11 @@ import UIKit
 
 
 
-var alarms:[Alarm] = [Alarm(name: "Wake Up", time: 1212, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true),Alarm(name: "Sleep", time: 0000, onOff: true)]
 //n
 
 
 class ViewController: UIViewController, UITableViewDataSource {
+    var alarms:[Alarm] = [Alarm(name: "Wake Up", time: "12:12", onOff: true),Alarm(name: "Sleep", time: "00:00", onOff: true),Alarm(name: "Sleep", time: "00:00", onOff: true)]
     var receivedTime:String = ""
     var receivedRepeat:String = ""
     var receivedLabel:String = ""
@@ -50,13 +50,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         navBar.tintColor = sG
         navBar.barTintColor = UIColor.black
         
-        
+        myTableView.reloadData()
+        myTableView.reloadInputViews()
         alarmNavItem.titleView?.tintColor = sG
         alarmNavItem.titleView?.backgroundColor = sG
         view.backgroundColor = UIColor.black
         self.setNeedsStatusBarAppearanceUpdate()
         baritem1.badgeColor = sG
-        print(receivedTime)
+        
+        
         
     }
 
@@ -73,14 +75,14 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     }
 
-    func getMinutes(var entInt:Int) -> Int{
-        var minutes = entInt % 100
-        return minutes
-    }
-    func getHours(var entInt:Int) -> Int{
-        var hours = entInt / 100
-        return hours
-    }
+//    func getMinutes(var entInt:Int) -> Int{
+//        var minutes = entInt % 100
+//        return minutes
+//    }
+//    func getHours(var entInt:Int) -> Int{
+//        var hours = entInt / 100
+//        return hours
+//    }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarms.count
         // adds the number of items in the array, which is how many rows we would need for the cells.
@@ -100,19 +102,19 @@ class ViewController: UIViewController, UITableViewDataSource {
             cell.textLabel?.textColor = sG
             cell.backgroundColor = UIColor.black
             
-            var minu = "\(getMinutes(var: alarmTime))"
-            var hou = "\(getHours(var: alarmTime))"
+//            var minu = "\(getMinutes(var: alarmTime))"
+//            var hou = "\(getHours(var: alarmTime))"
+//
+//            if  minu == "0" {
+//                minu = "00"
+//            }
+//            if Int(hou)! < 10 {
+//                hou = "0" + hou
+//            }
             
-            if  minu == "0" {
-                minu = "00"
-            }
-            if Int(hou)! < 10 {
-                hou = "0" + hou
-            }
             
             
-            
-            cell.textLabel?.text = "\(hou)" +  ":" + minu
+            cell.textLabel?.text = alarmTime
             
             cell.detailTextLabel?.text = "\(alarmText)"
             return cell

@@ -7,9 +7,9 @@
 
 import Foundation
 import UIKit
-
+let defaults1 = UserDefaults.standard
 class Repeat: UIViewController {
-    let defaults1 = UserDefaults.standard
+    
     
     @IBOutlet weak var sundayButton: UIButton!
     @IBOutlet weak var mondayButton: UIButton!
@@ -92,7 +92,7 @@ class Repeat: UIViewController {
         
         
         //trying to make choices saved
-        print(selection1)
+        
         
         
     }
@@ -134,7 +134,7 @@ class Repeat: UIViewController {
                 start += 1
             }
             
-            
+            defaults1.set(VC1.repeatButtonString, forKey: "repeatButtonString")
             VC1.repeatButton.setTitle("Repeat" + "(" + "\(VC1.repeatButtonString)" + ")", for: .normal)
             
             

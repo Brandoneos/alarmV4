@@ -128,10 +128,10 @@
                                         </items>
                                     </navigationBar>
                                     <datePicker contentMode="scaleToFill" verticalHuggingPriority="248" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zka-3X-gxB">
-                                        <rect key="frame" x="0.0" y="81" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="81" width="375" height="71"/>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jx9-Mq-g02">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="206"/>
+                                        <rect key="frame" x="0.0" y="177" width="375" height="205"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfM-2I-Fhw">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
@@ -155,27 +155,16 @@
                                                     <segue destination="oMb-gx-Oge" kind="show" identifier="segue2" id="NK3-YW-ZV2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-MX-Ndo">
-                                                <rect key="frame" x="0.0" y="35" width="375" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="xvQ-tT-185"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Untitled" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ES-ny-Xna">
+                                                <rect key="frame" x="0.0" y="35" width="375" height="34"/>
+                                                <color key="backgroundColor" red="0.80408462209999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.42352941179999998" green="1" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <buttonConfiguration key="configuration" style="tinted" titleAlignment="leading">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Label(Untitled)">
-                                                            <attributes>
-                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                <font key="NSFont" size="15" name="Helvetica"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <attributedString key="attributedSubtitle"/>
-                                                </buttonConfiguration>
-                                            </button>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW0-xY-KdE">
-                                                <rect key="frame" x="0.0" y="70" width="375" height="35"/>
+                                                <rect key="frame" x="0.0" y="69" width="375" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="7tR-g3-2eo"/>
                                                 </constraints>
@@ -194,7 +183,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7zn-u0-g9X">
-                                                <rect key="frame" x="0.0" y="105" width="375" height="31"/>
+                                                <rect key="frame" x="0.0" y="104" width="375" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="               Snooze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm5-LR-s7c">
                                                         <rect key="frame" x="0.0" y="0.0" width="302" height="31"/>
@@ -221,7 +210,7 @@
                                                 <color key="backgroundColor" red="0.7843137255" green="1" blue="0.76534718629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOM-AJ-xh0">
-                                                <rect key="frame" x="0.0" y="136" width="375" height="35"/>
+                                                <rect key="frame" x="0.0" y="135" width="375" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="CFS-cu-SKA"/>
                                                 </constraints>
@@ -240,7 +229,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-tR-liN">
-                                                <rect key="frame" x="0.0" y="171" width="375" height="35"/>
+                                                <rect key="frame" x="0.0" y="170" width="375" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="96F-PZ-PX8"/>
                                                 </constraints>
@@ -334,11 +323,11 @@
                         <outlet property="collectionView" destination="SjA-hy-s8X" id="uXC-UD-yM5"/>
                         <outlet property="deleteButton" destination="fh0-tR-liN" id="8DO-ty-BB6"/>
                         <outlet property="extrasButton" destination="cOM-AJ-xh0" id="WQ0-HD-OV4"/>
-                        <outlet property="labelButton" destination="xAK-MX-Ndo" id="Tqa-a4-2Jn"/>
                         <outlet property="repeatButton" destination="wfM-2I-Fhw" id="DWH-0c-XSe"/>
                         <outlet property="snoozeSwitch" destination="Hhd-ra-jEh" id="pzL-rh-yc6"/>
                         <outlet property="soundButton" destination="xW0-xY-KdE" id="Vl5-Et-xqy"/>
                         <outlet property="timeView" destination="zka-3X-gxB" id="LF7-ay-pYu"/>
+                        <outlet property="titleField" destination="0ES-ny-Xna" id="JpW-BW-xU0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EY7-v3-Uyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -564,6 +553,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Kci-bT-vp5"/>
         <segue reference="bGk-MY-wWv"/>
     </inferredMetricsTieBreakers>
     <resources>
