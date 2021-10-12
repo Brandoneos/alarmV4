@@ -14,7 +14,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     var alarms:[Alarm] = [Alarm(name: "Wake Up", time: "12:12", onOff: true),Alarm(name: "Sleep", time: "00:00", onOff: true),Alarm(name: "Sleep", time: "00:00", onOff: true)]
-    var receivedTime:String = ""
+    
+    var receivedTime:String = "1.0"
     var receivedRepeat:String = ""
     var receivedLabel:String = ""
     var receivedSound:String = ""
@@ -41,6 +42,16 @@ class ViewController: UIViewController, UITableViewDataSource {
     var sG = UIColor(red: 108.0/255.0, green: 255.0/255.0, blue: 180.0/255.0, alpha: 1.0)
     var passedAlarm: Alarm!
     var currentView = ViewController.self
+    
+    override func viewWillAppear(_ animated: Bool) {
+        myTableView.reloadData()
+        myTableView.reloadInputViews()
+        
+    
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,8 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         navBar.tintColor = sG
         navBar.barTintColor = UIColor.black
         
-        myTableView.reloadData()
-        myTableView.reloadInputViews()
+        
         alarmNavItem.titleView?.tintColor = sG
         alarmNavItem.titleView?.backgroundColor = sG
         view.backgroundColor = UIColor.black
@@ -59,6 +69,57 @@ class ViewController: UIViewController, UITableViewDataSource {
         baritem1.badgeColor = sG
         
         
+    }
+    
+    @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
+        
+        var addalarmViewCon:addAlarm = unwindSegue.source as! addAlarm
+        
+        var date1 = addalarmViewCon.timeView.date
+        
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let datetime = formatter.string(from: date1)
+        
+        
+        receivedTime = datetime
+        
+        var te = ""
+        if addalarmViewCon.titleField.text == "" {
+            te = "Untitled"
+        } else {
+            te = addalarmViewCon.titleField.text!
+        }
+        
+            
+        
+        
+        var s = 0
+        var endString = ""
+        
+        for i in addalarmViewCon.emptyArray {
+            
+            if addalarmViewCon.repeatButtonString.contains(daysOF[s]) {
+                addalarmViewCon.emptyArray[s] = 1
+            }
+            endString += "\(addalarmViewCon.emptyArray[s])"
+            s += 1
+            
+
+        }
+        
+        
+        
+        
+        var endInt = Int(endString)!
+        
+        var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
+        
+        alarms.append(newAlarm)
+        print(alarms.count)
+        myTableView.reloadData()
+        myTableView.reloadInputViews()
         
     }
 

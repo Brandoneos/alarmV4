@@ -40,7 +40,7 @@ class addAlarm: UIViewController {
         collectionView.dataSource = self
         timeView.datePickerMode = .time
         
-        
+        print(repeatButtonString)
         
     }
     
@@ -62,7 +62,7 @@ class addAlarm: UIViewController {
         
         
         if (segue.identifier == "segue1") {
-            print(datetime)
+            
             var secondVCVC:ViewController = segue.destination as! ViewController
             
             
@@ -96,8 +96,11 @@ class addAlarm: UIViewController {
             var endInt = Int(endString)!
             
             var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
+            
             secondVCVC.alarms.append(newAlarm)
             
+            
+            print("Sent new alarm")
             
             
             
@@ -113,12 +116,13 @@ class addAlarm: UIViewController {
             defaults1.set(false, forKey: "selection7")
             
             secondVC.modalPresentationStyle = .fullScreen
-            
+
             secondVC.modalTransitionStyle = .flipHorizontal
             
             
-//            var newAlarm = Alarm(name: <#T##String#>, time: <#T##Int#>, onOff: true,)
-//            var newAlarm1 = Alarm()
+            
+            
+
             
             
             
@@ -147,6 +151,7 @@ class addAlarm: UIViewController {
     
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
         
+        
     }
     
     
@@ -158,8 +163,7 @@ class addAlarm: UIViewController {
 //                present(secondVC, animated: true, completion: nil)
     }
     
-    @IBAction func cancelPressed(_ sender: Any) {
-    }
+    
     
     
     
