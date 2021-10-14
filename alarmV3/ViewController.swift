@@ -71,57 +71,68 @@ class ViewController: UIViewController, UITableViewDataSource {
         
     }
     
-    @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
-        
+    func transferData(Usegue: UIStoryboardSegue) {
+        var unwindSegue = Usegue
         var addalarmViewCon:addAlarm = unwindSegue.source as! addAlarm
+        var cancelSave = addalarmViewCon.cancelOrSave
         
         var date1 = addalarmViewCon.timeView.date
         
-        
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        let datetime = formatter.string(from: date1)
-        
-        
-        receivedTime = datetime
-        
-        var te = ""
-        if addalarmViewCon.titleField.text == "" {
-            te = "Untitled"
-        } else {
-            te = addalarmViewCon.titleField.text!
-        }
-        
+        //If statement for which button was pressed(Save or Canceled)
+        if cancelSave == 1  {
+            let formatter = DateFormatter()
+            formatter.timeStyle = .short
+            let datetime = formatter.string(from: date1)
             
-        
-        
-        var s = 0
-        var endString = ""
-        
-        for i in addalarmViewCon.emptyArray {
             
-            if addalarmViewCon.repeatButtonString.contains(daysOF[s]) {
-                addalarmViewCon.emptyArray[s] = 1
+            receivedTime = datetime
+            
+            var te = ""
+            if addalarmViewCon.titleField.text == "" {
+                te = "Untitled"
+            } else {
+                te = addalarmViewCon.titleField.text!
             }
-            endString += "\(addalarmViewCon.emptyArray[s])"
-            s += 1
-            
+            var s = 0
+            var endString = ""
+            for i in addalarmViewCon.emptyArray {
+                
+                if addalarmViewCon.repeatButtonString.contains(daysOF[s]) {
+                    addalarmViewCon.emptyArray[s] = 1
+                }
+                endString += "\(addalarmViewCon.emptyArray[s])"
+                s += 1
 
+            }
+            
+            var endInt = Int(endString)!
+            
+            var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
+            
+            alarms.append(newAlarm)
+            
+            myTableView.reloadData()
+            myTableView.reloadInputViews()
+        } else if cancelSave == 2 {
+            print("CANCELED")
+        } else {
+            print("Error")
         }
-        
-        
-        
-        
-        var endInt = Int(endString)!
-        
-        var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
-        
-        alarms.append(newAlarm)
-        print(alarms.count)
-        myTableView.reloadData()
-        myTableView.reloadInputViews()
         
     }
+    
+    @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
+        
+        
+        
+    }
+    
+    @IBAction func unwindSave(unwindSegue: UIStoryboardSegue) {
+        
+        transferData(Usegue: unwindSegue)
+        
+    }
+    
 
     func sortAlarms() {
         

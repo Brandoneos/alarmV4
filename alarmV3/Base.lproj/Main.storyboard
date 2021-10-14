@@ -115,13 +115,14 @@
                                             <navigationItem title="Add Alarm" id="6l3-kM-fei">
                                                 <barButtonItem key="leftBarButtonItem" title="Cancel" id="Awt-ph-cae">
                                                     <connections>
-                                                        <action selector="myUnwindDoerWithUnwindSegue:" destination="eBw-UT-aTh" id="2Hf-Zp-5bo"/>
+                                                        <action selector="cancelPressed:" destination="eBw-UT-aTh" id="qdB-f0-PqG"/>
                                                         <segue destination="hKs-yN-Lwi" kind="unwind" unwindAction="myUnwindDoerWithUnwindSegue:" id="R6X-RF-L8V"/>
                                                     </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" title="Save" id="r25-Ch-7gn">
                                                     <connections>
                                                         <action selector="savePressed:" destination="eBw-UT-aTh" id="K8W-MZ-FV7"/>
+                                                        <segue destination="hKs-yN-Lwi" kind="unwind" unwindAction="unwindSaveWithUnwindSegue:" id="eVr-PB-MxV"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>

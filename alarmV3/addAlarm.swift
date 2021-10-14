@@ -13,7 +13,7 @@ var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 var daysOF:[String] = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 class addAlarm: UIViewController {
     var emptyArray:[Int] = [0,0,0,0,0,0,0]
-    
+    var cancelOrSave:Int = 1
    
     var selectionsPassed:[Bool] = []
     
@@ -152,17 +152,27 @@ class addAlarm: UIViewController {
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
         
         
+        
+    }
+    
+    @IBAction func unwindSave(unwindSegue: UIStoryboardSegue) {
+        
     }
     
     
     @IBAction func savePressed(_ sender: Any) {
+        cancelOrSave = 1
         
-        
-        
+        print("save")
        
-//                present(secondVC, animated: true, completion: nil)
     }
     
+    @IBAction func cancelPressed(_ sender: Any) {
+        
+        cancelOrSave = 2
+        print("cancel")
+        
+    }
     
     
     
