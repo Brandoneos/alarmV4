@@ -71,6 +71,26 @@ class ViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    
+    func resetRepeats() {
+        defaults1.set(false, forKey: "selection1")
+        defaults1.set(false, forKey: "selection2")
+        defaults1.set(false, forKey: "selection3")
+        defaults1.set(false, forKey: "selection4")
+        defaults1.set(false, forKey: "selection5")
+        defaults1.set(false, forKey: "selection6")
+        defaults1.set(false, forKey: "selection7")
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        resetRepeats()
+        
+        
+        
+        //
+    }
+    
     func transferData(Usegue: UIStoryboardSegue) {
         var unwindSegue = Usegue
         var addalarmViewCon:addAlarm = unwindSegue.source as! addAlarm
@@ -123,6 +143,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
         
+        //cancels with nothing else happening
         
         
     }

@@ -161,16 +161,13 @@ class addAlarm: UIViewController {
     
     
     @IBAction func savePressed(_ sender: Any) {
-        cancelOrSave = 1
-        
-        print("save")
+       
        
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         
-        cancelOrSave = 2
-        print("cancel")
+        
         
     }
     
