@@ -18,6 +18,7 @@
 		F65DD57926CEE2C5005CBDF2 /* alarmV3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD57826CEE2C5005CBDF2 /* alarmV3UITests.swift */; };
 		F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67465B226DEB6420001E6C9 /* addAlarm.swift */; };
 		F67465B526DEBE960001E6C9 /* NumberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */; };
+		F6A288C2271E02C50065BE0F /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A288C1271E02C50065BE0F /* Sound.swift */; };
 		F6D1BB2C26D42A5E00447E2D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1BB2B26D42A5E00447E2D /* Alarm.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		F65DD57826CEE2C5005CBDF2 /* alarmV3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarmV3UITests.swift; sourceTree = "<group>"; };
 		F67465B226DEB6420001E6C9 /* addAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAlarm.swift; sourceTree = "<group>"; };
 		F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionCell.swift; sourceTree = "<group>"; };
+		F6A288C1271E02C50065BE0F /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		F6D1BB2B26D42A5E00447E2D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				F65DD55B26CEE2C3005CBDF2 /* ViewController.swift */,
 				F6D1BB2B26D42A5E00447E2D /* Alarm.swift */,
 				F65DD55D26CEE2C3005CBDF2 /* Main.storyboard */,
+				F6A288C1271E02C50065BE0F /* Sound.swift */,
 				F67465B226DEB6420001E6C9 /* addAlarm.swift */,
 				F61A12A126FA696C007585D5 /* Repeat.swift */,
 				F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */,
@@ -274,6 +277,7 @@
 				F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */,
 				F65DD55A26CEE2C3005CBDF2 /* SceneDelegate.swift in Sources */,
 				F6D1BB2C26D42A5E00447E2D /* Alarm.swift in Sources */,
+				F6A288C2271E02C50065BE0F /* Sound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

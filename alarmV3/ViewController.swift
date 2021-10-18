@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     var receivedSound:String = ""
     var receivedSnooze:Bool = true
     var receivedExtras:String = ""
-    
+    var receivedRepeatCollection:[Bool] = []
     
     
     
@@ -80,7 +80,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         defaults1.set(false, forKey: "selection5")
         defaults1.set(false, forKey: "selection6")
         defaults1.set(false, forKey: "selection7")
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,6 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         var unwindSegue = Usegue
         var addalarmViewCon:addAlarm = unwindSegue.source as! addAlarm
         var cancelSave = addalarmViewCon.cancelOrSave
+        receivedRepeatCollection = addalarmViewCon.selectionsPassed
         
         var date1 = addalarmViewCon.timeView.date
         
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             
             var endInt = Int(endString)!
             
-            var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
+            var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: addalarmViewCon.emptyArray)
             
             alarms.append(newAlarm)
             
@@ -150,7 +150,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func unwindSave(unwindSegue: UIStoryboardSegue) {
         
+        
         transferData(Usegue: unwindSegue)
+        
         
     }
     

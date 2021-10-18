@@ -40,7 +40,7 @@ class addAlarm: UIViewController {
         collectionView.dataSource = self
         timeView.datePickerMode = .time
         
-        print(repeatButtonString)
+        
         
     }
     
@@ -63,71 +63,7 @@ class addAlarm: UIViewController {
         
         if (segue.identifier == "segue1") {
             
-            var secondVCVC:ViewController = segue.destination as! ViewController
-            
-            
-            secondVCVC.receivedTime = datetime
-            var te = ""
-            if titleField.text == "" {
-                te = "Untitled"
-            } else {
-                te = titleField.text!
-            }
-            
-                
-            
-            
-            var s = 0
-            var endString = ""
-            for i in emptyArray {
-                
-                if repeatButtonString.contains(daysOF[s]) {
-                    emptyArray[s] = 1
-                }
-                endString += "\(emptyArray[s])"
-                s += 1
-                
-    
-            }
-            
-            
-            
-            
-            var endInt = Int(endString)!
-            
-            var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: endInt)
-            
-            secondVCVC.alarms.append(newAlarm)
-            
-            
-            print("Sent new alarm")
-            
-            
-            
-            
-            //resets for next alarm made
-            
-            defaults1.set(false, forKey: "selection1")
-            defaults1.set(false, forKey: "selection2")
-            defaults1.set(false, forKey: "selection3")
-            defaults1.set(false, forKey: "selection4")
-            defaults1.set(false, forKey: "selection5")
-            defaults1.set(false, forKey: "selection6")
-            defaults1.set(false, forKey: "selection7")
-            
-            secondVC.modalPresentationStyle = .fullScreen
-
-            secondVC.modalTransitionStyle = .flipHorizontal
-            
-            
-            
-            
-
-            
-            
-            
-            present(secondVC, animated: true, completion: nil)
-            
+            //no such segue exists
             
         } else if  segue.identifier == "segue2" {
             var  thirdVCVC:Repeat = segue.destination as! Repeat
@@ -150,6 +86,8 @@ class addAlarm: UIViewController {
     }
     
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
+        var repeatVC:Repeat = unwindSegue.source as! Repeat
+        selectionsPassed = repeatVC.selections
         
         
         
