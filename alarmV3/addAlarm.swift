@@ -106,7 +106,6 @@ class addAlarm: UIViewController {
     @IBAction func cancelPressed(_ sender: Any) {
         
         
-        
     }
     
     

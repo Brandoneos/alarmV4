@@ -11,7 +11,7 @@ import UIKit
 
 //n
 
-
+var sG = UIColor(red: 108.0/255.0, green: 255.0/255.0, blue: 180.0/255.0, alpha: 1.0)
 class ViewController: UIViewController, UITableViewDataSource {
     var alarms:[Alarm] = [Alarm(name: "Wake Up", time: "12:12", onOff: true),Alarm(name: "Sleep", time: "00:00", onOff: true),Alarm(name: "Sleep", time: "00:00", onOff: true)]
     
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
     
-    var sG = UIColor(red: 108.0/255.0, green: 255.0/255.0, blue: 180.0/255.0, alpha: 1.0)
+    
     var passedAlarm: Alarm!
     var currentView = ViewController.self
     

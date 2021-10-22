@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60769922720A00F00507A2A /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F60769912720A00F00507A2A /* coin.mp3 */; };
+		F60769952720A39A00507A2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60769942720A39A00507A2A /* AVFoundation.framework */; };
+		F60769992720AB8700507A2A /* bowArrow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F60769982720AB8700507A2A /* bowArrow.mp3 */; };
 		F61A12A226FA696C007585D5 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A12A126FA696C007585D5 /* Repeat.swift */; };
 		F65DD55826CEE2C3005CBDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55726CEE2C3005CBDF2 /* AppDelegate.swift */; };
 		F65DD55A26CEE2C3005CBDF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55926CEE2C3005CBDF2 /* SceneDelegate.swift */; };
@@ -19,6 +22,8 @@
 		F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67465B226DEB6420001E6C9 /* addAlarm.swift */; };
 		F67465B526DEBE960001E6C9 /* NumberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */; };
 		F6A288C2271E02C50065BE0F /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A288C1271E02C50065BE0F /* Sound.swift */; };
+		F6CCB5E52723433D000C725F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCB5E32723433D000C725F /* MyTableViewCell.swift */; };
+		F6CCB5E62723433D000C725F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CCB5E42723433D000C725F /* MyTableViewCell.xib */; };
 		F6D1BB2C26D42A5E00447E2D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D1BB2B26D42A5E00447E2D /* Alarm.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F60769912720A00F00507A2A /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		F60769942720A39A00507A2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F60769982720AB8700507A2A /* bowArrow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bowArrow.mp3; sourceTree = "<group>"; };
 		F61A12A126FA696C007585D5 /* Repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
 		F65DD55426CEE2C3005CBDF2 /* alarmV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alarmV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65DD55726CEE2C3005CBDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,8 @@
 		F67465B226DEB6420001E6C9 /* addAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAlarm.swift; sourceTree = "<group>"; };
 		F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionCell.swift; sourceTree = "<group>"; };
 		F6A288C1271E02C50065BE0F /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		F6CCB5E32723433D000C725F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		F6CCB5E42723433D000C725F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		F6D1BB2B26D42A5E00447E2D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60769952720A39A00507A2A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F607698E27209E6800507A2A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F60769912720A00F00507A2A /* coin.mp3 */,
+				F60769982720AB8700507A2A /* bowArrow.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		F60769932720A39A00507A2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F60769942720A39A00507A2A /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F65DD54B26CEE2C3005CBDF2 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,7 @@
 				F65DD56D26CEE2C5005CBDF2 /* alarmV3Tests */,
 				F65DD57726CEE2C5005CBDF2 /* alarmV3UITests */,
 				F65DD55526CEE2C3005CBDF2 /* Products */,
+				F60769932720A39A00507A2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,10 +142,13 @@
 				F6D1BB2B26D42A5E00447E2D /* Alarm.swift */,
 				F65DD55D26CEE2C3005CBDF2 /* Main.storyboard */,
 				F6A288C1271E02C50065BE0F /* Sound.swift */,
+				F6CCB5E32723433D000C725F /* MyTableViewCell.swift */,
+				F6CCB5E42723433D000C725F /* MyTableViewCell.xib */,
 				F67465B226DEB6420001E6C9 /* addAlarm.swift */,
 				F61A12A126FA696C007585D5 /* Repeat.swift */,
 				F67465B426DEBE960001E6C9 /* NumberCollectionCell.swift */,
 				F65DD56026CEE2C5005CBDF2 /* Assets.xcassets */,
+				F607698E27209E6800507A2A /* Sounds */,
 				F65DD56226CEE2C5005CBDF2 /* LaunchScreen.storyboard */,
 				F65DD56526CEE2C5005CBDF2 /* Info.plist */,
 			);
@@ -244,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65DD56426CEE2C5005CBDF2 /* LaunchScreen.storyboard in Resources */,
+				F6CCB5E62723433D000C725F /* MyTableViewCell.xib in Resources */,
 				F65DD56126CEE2C5005CBDF2 /* Assets.xcassets in Resources */,
+				F60769992720AB8700507A2A /* bowArrow.mp3 in Resources */,
 				F65DD55F26CEE2C3005CBDF2 /* Main.storyboard in Resources */,
+				F60769922720A00F00507A2A /* coin.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +310,7 @@
 				F65DD55826CEE2C3005CBDF2 /* AppDelegate.swift in Sources */,
 				F67465B526DEBE960001E6C9 /* NumberCollectionCell.swift in Sources */,
 				F67465B326DEB6420001E6C9 /* addAlarm.swift in Sources */,
+				F6CCB5E52723433D000C725F /* MyTableViewCell.swift in Sources */,
 				F65DD55A26CEE2C3005CBDF2 /* SceneDelegate.swift in Sources */,
 				F6D1BB2C26D42A5E00447E2D /* Alarm.swift in Sources */,
 				F6A288C2271E02C50065BE0F /* Sound.swift in Sources */,
