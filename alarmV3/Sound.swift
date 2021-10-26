@@ -24,16 +24,15 @@ class Sound:UIViewController, UITableViewDataSource {
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
-        let content = UNMutableNotificationContent()
-            content.title = "Notification Tutorial"
-            content.subtitle = "from ioscreator.com"
-            content.body = " Notification triggered"
-            //Default sound
-            content.sound = UNNotificationSound.default
-            //Play custom sound
-            content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "123.mp3"))
-       audioPlay(soundName: "coin", fileType: "mp3")
-        audioPlayer.play()
+//        let content = UNMutableNotificationContent()
+//            content.title = "Notification Tutorial"
+//            content.subtitle = "from ioscreator.com"
+//            content.body = " Notification triggered"
+//            //Default sound
+//            content.sound = UNNotificationSound.default
+//            //Play custom sound
+//            content.sound = UNNotificationSound.init(named:UNNotificationSoundName(rawValue: "123.mp3"))
+       
         
         
         //Colors
@@ -67,7 +66,7 @@ class Sound:UIViewController, UITableViewDataSource {
 //      let alarmTime = sounds[indexPath.row].time
         let alarmText = sounds[indexPath.row]
         cell.configure(title: alarmText)
-        
+        cell.delegate = self
             
         cell.detailTextLabel?.textColor = sG
         cell.textLabel?.textColor = sG
@@ -81,11 +80,27 @@ class Sound:UIViewController, UITableViewDataSource {
          
            
     }
+    @IBAction func myUnwindSound(unwindSegue: UIStoryboardSegue) {
+        
+    }
     
     
     
 }
 
-
+extension Sound: MyTableViewCellDelegate {
+    func buttonClicked(with title: String) {
+        tableView.reloadData()
+        audioPlay(soundName: title, fileType: "mp3")
+        audioPlayer.play()
+        
+        
+        
+    }
+    
+    
+    
+    
+}
 
 

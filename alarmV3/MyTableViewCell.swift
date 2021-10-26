@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol MyTableViewCellDelegate: AnyObject {
+    func buttonClicked(with title: String)
+    
+}
+
+
+
 class MyTableViewCell: UITableViewCell {
+    
+    weak var delegate: MyTableViewCellDelegate?
+    
+    
     var clicked:Bool = false
     static let identifier = "MyTableViewCell"
     
@@ -16,16 +27,29 @@ class MyTableViewCell: UITableViewCell {
     }
     
     @IBOutlet var button: UIButton!
+    private var title: String = ""
+    
     @IBAction func buttonClicked() {
-        var image = UIImage(systemName: "checkmark")!
-        clicked = true
+        
+        delegate?.buttonClicked(with: title)
+        
+        var image = UIImage(systemName: "checkmark")
+        var image2 = UIImage(systemName: "poweroff")
+        clicked = !clicked
+        
         if clicked {
             button.setImage(image, for: .normal)
+            print("image")
         } else {
-            button.setImage(nil, for: .normal)
+            button.setImage(image2, for: .normal)
+            print("nil")
         }
+        
+        
+        
     }
     func configure(title: String) {
+        self.title = title
         button.setTitle("   " + title, for: .normal)
         
         
@@ -38,6 +62,7 @@ class MyTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    
-    
 }
+
+
+

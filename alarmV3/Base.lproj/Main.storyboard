@@ -121,6 +121,7 @@
                                             <color key="tintColor" red="0.42352941179999998" green="1" blue="0.76534718629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="myUnwindDoerWithUnwindSegue:" destination="oMb-gx-Oge" id="CNc-Ah-vRX"/>
+                                                <segue destination="Hof-j8-9NW" kind="unwind" unwindAction="myUnwindSoundWithUnwindSegue:" id="yqT-KJ-vGB"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -150,6 +151,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndh-cf-kG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Hof-j8-9NW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1845.5999999999999" y="-1302.0989505247378"/>
         </scene>

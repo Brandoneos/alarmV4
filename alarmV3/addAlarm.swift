@@ -85,6 +85,12 @@ class addAlarm: UIViewController {
         
     }
     
+    @IBAction func myUnwindSound(unwindSegue: UIStoryboardSegue) {
+        print("hi") // here
+        
+    }
+    
+    
     @IBAction func myUnwindDoer(unwindSegue: UIStoryboardSegue) {
         var repeatVC:Repeat = unwindSegue.source as! Repeat
         selectionsPassed = repeatVC.selections
@@ -137,7 +143,7 @@ extension UIViewController: UICollectionViewDataSource {
             var dude = numbers[indexPath.row]
         if (dude == 13) {
             cell.numberButton.setTitle("", for: .normal)
-            var image = UIImage(named: "deleteIcon")
+             var image = UIImage(named: "deleteIcon")
             
             cell.numberButton.setImage(UIImage(systemName: "delete.left"), for: .normal)
             cell.numberButton.tintColor = springGreen
