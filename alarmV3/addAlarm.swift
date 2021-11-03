@@ -11,6 +11,7 @@ var numbers:[Int] = [1,2,3,4,5,6,7,8,9,14,0,13]
 
 
 var daysOF:[String] = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
 class addAlarm: UIViewController {
     var emptyArray:[Int] = [0,0,0,0,0,0,0]
     var cancelOrSave:Int = 1
@@ -18,6 +19,7 @@ class addAlarm: UIViewController {
     var selectionsPassed:[Bool] = []
     
     var repeatButtonString = ""
+    var soundTitle = ""
     
     
     @IBOutlet weak var titleField: UITextField!
@@ -86,7 +88,10 @@ class addAlarm: UIViewController {
     }
     
     @IBAction func myUnwindSound(unwindSegue: UIStoryboardSegue) {
-        print("hi") // here
+        var soundVC: Sound = unwindSegue.source as! Sound
+        soundTitle =  soundVC.selectedSound
+        
+        
         
     }
     

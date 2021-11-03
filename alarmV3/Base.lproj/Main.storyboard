@@ -124,6 +124,11 @@
                                                 <segue destination="Hof-j8-9NW" kind="unwind" unwindAction="myUnwindSoundWithUnwindSegue:" id="yqT-KJ-vGB"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Ovy-K2-iPi">
+                                            <connections>
+                                                <action selector="refreshButton:" destination="5xl-7S-eKa" id="rL2-mA-Vd6"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

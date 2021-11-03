@@ -99,7 +99,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         var date1 = addalarmViewCon.timeView.date
         
         //If statement for which button was pressed(Save or Canceled)
-        if cancelSave == 1  {
+        var soundT = addalarmViewCon.soundTitle
             let formatter = DateFormatter()
             formatter.timeStyle = .short
             let datetime = formatter.string(from: date1)
@@ -127,17 +127,14 @@ class ViewController: UIViewController, UITableViewDataSource {
             
             var endInt = Int(endString)!
             
-            var newAlarm = Alarm(name: te, time: datetime, onOff: true, weekly: addalarmViewCon.emptyArray)
+        var newAlarm = Alarm(name: te, time: datetime, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
+        
             
             alarms.append(newAlarm)
             
             myTableView.reloadData()
             myTableView.reloadInputViews()
-        } else if cancelSave == 2 {
-            print("CANCELED")
-        } else {
-            print("Error")
-        }
+       
         
     }
     

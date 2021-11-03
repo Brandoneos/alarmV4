@@ -9,6 +9,9 @@ import UIKit
 
 protocol MyTableViewCellDelegate: AnyObject {
     func buttonClicked(with title: String)
+    //-> Int
+//    func getSounds() -> [String]
+    func resetView()
     
 }
 
@@ -31,19 +34,26 @@ class MyTableViewCell: UITableViewCell {
     
     @IBAction func buttonClicked() {
         
+        
+//        delegate?.resetView()
         delegate?.buttonClicked(with: title)
+
+       clicked = !clicked
         
         var image = UIImage(systemName: "checkmark")
         var image2 = UIImage(systemName: "poweroff")
-        clicked = !clicked
+        
+        
+        
         
         if clicked {
             button.setImage(image, for: .normal)
-            print("image")
         } else {
             button.setImage(image2, for: .normal)
-            print("nil")
         }
+        
+        
+
         
         
         

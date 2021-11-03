@@ -19,7 +19,7 @@ class Sound:UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var buttonInCell: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
-    
+    var selectedSound:String = ""
     
     var audioPlayer = AVAudioPlayer()
     
@@ -67,15 +67,11 @@ class Sound:UIViewController, UITableViewDataSource {
         let alarmText = sounds[indexPath.row]
         cell.configure(title: alarmText)
         cell.delegate = self
-            
+        
         cell.detailTextLabel?.textColor = sG
         cell.textLabel?.textColor = sG
         cell.backgroundColor = UIColor.black
-            
-            
-//        cell.textLabel?.text = alarmText
-            
-//            cell.detailTextLabel?.text = "\(alarmText)"
+        
         return cell
          
            
@@ -83,20 +79,83 @@ class Sound:UIViewController, UITableViewDataSource {
     @IBAction func myUnwindSound(unwindSegue: UIStoryboardSegue) {
         
     }
+    func resetView() {
+        //trying to reset the images to poweroff of all of the buttons except the one clicked
+        var image = UIImage(systemName: "checkmark")
+        var image2 = UIImage(systemName: "poweroff")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier) as! MyTableViewCell
+        for i in sounds {
+            cell.removeFromSuperview()
+            
+        }
+        
+        tableView.reloadData()
+        
+//        for i in sounds {
+//            cell.configure(title: i)
+//            tableView.addSubview(cell)
+//        }
+                
+        
+        
+        
+        
+        
+        
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var VC1:addAlarm = segue.destination as! addAlarm
+        
+        
+        
+        VC1.soundTitle = selectedSound
+        
+        if selectedSound == "" {
+            VC1.soundButton.setTitle("Sound"  + "(coin)", for: .normal)
+        } else {
+            defaults1.set(VC1.soundTitle, forKey: "soundTitle")
+            VC1.soundButton.setTitle("Sound" + "(" + "\(VC1.soundTitle)" + ")", for: .normal)
+        }
+        
+        
+            
+    
+    }
+    
+    
+    @IBAction func refreshButton(_ sender: Any) {
+        print("refresh")
+        resetView()
+    }
     
     
     
 }
 
 extension Sound: MyTableViewCellDelegate {
+    
     func buttonClicked(with title: String) {
-        tableView.reloadData()
+        // -> Int
+        
         audioPlay(soundName: title, fileType: "mp3")
         audioPlayer.play()
+    
+        var ind = 0
+        //I need to reset all the images of the buttons
+        
+        selectedSound = title
+        
         
         
         
     }
+    
+    
+//    func getSounds() -> [String] {
+//        return sounds
+//    }
     
     
     
