@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 
 //n
@@ -129,7 +129,22 @@ class ViewController: UIViewController, UITableViewDataSource {
             
         var newAlarm = Alarm(name: te, time: datetime, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
         
-            
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = newAlarm.name
+        content.body = "This is a local notification"
+        content.sound = .default
+        
+        let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+        
+        center.add(request) { error in
+            if error != nil {
+                print("Error = \(error?.localizedDescription ?? "error local notification")")
+            }
+        }
             alarms.append(newAlarm)
             
             myTableView.reloadData()

@@ -619,7 +619,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alarm" catalog="system" width="124" height="128"/>
+        <image name="alarm" catalog="system" width="32" height="32"/>
         <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="timer" catalog="system" width="128" height="121"/>
