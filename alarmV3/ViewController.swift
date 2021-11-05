@@ -7,7 +7,8 @@
 
 import UIKit
 import UserNotifications
-
+import AVFoundation
+import AudioToolbox
 
 //n
 
@@ -90,6 +91,74 @@ class ViewController: UIViewController, UITableViewDataSource {
         //
     }
     
+    func convertTime(time:String)-> Int {
+        
+        var t2 = time
+        
+        
+        
+        
+        
+        var sign = 0
+        var arrayT:[String] = []
+        var arrayTI:[Int] = []
+        if t2.contains("P") {
+            t2.removeLast()
+            t2.removeLast()
+            t2.removeLast()
+            sign = 1
+            if t2.count < 8 {
+                t2 = "0" + t2
+            }
+        } else {
+            t2.removeLast()
+            t2.removeLast()
+            t2.removeLast()
+            if t2.count < 8 {
+                t2 = "0" + t2
+            }
+            
+        }
+        
+        
+        for i in t2 {
+            arrayT.append("\(i)")
+            
+        }
+        arrayT.remove(at: 2)
+        arrayT.remove(at: 4)
+        
+        for i in arrayT {
+            var ii = Int(i)!
+            arrayTI.append(ii)
+        }
+        
+        if sign == 1 {
+            
+            if arrayTI[0] != 1 && arrayTI[1] != 2 {
+                arrayTI[0] = arrayTI[0] + 1
+                arrayTI[1] = arrayTI[1] + 2
+            }
+        } else {
+            
+            if arrayTI[0] == 1 && arrayTI[1] == 2 {
+                arrayTI[0] = arrayTI[0] - 1
+                arrayTI[1] = arrayTI[1] - 2
+            }
+        }
+        
+        print(time)
+        print(t2)
+        print(arrayT)
+        print(arrayTI)
+        
+        
+        
+        
+        var seconds = 60
+        return 3
+    }
+    
     func transferData(Usegue: UIStoryboardSegue) {
         var unwindSegue = Usegue
         var addalarmViewCon:addAlarm = unwindSegue.source as! addAlarm
@@ -100,9 +169,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         //If statement for which button was pressed(Save or Canceled)
         var soundT = addalarmViewCon.soundTitle
-            let formatter = DateFormatter()
-            formatter.timeStyle = .short
-            let datetime = formatter.string(from: date1)
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        let datetime = formatter.string(from: date1)
             
             
             receivedTime = datetime
@@ -134,7 +203,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         let content = UNMutableNotificationContent()
         content.title = newAlarm.name
         content.body = "This is a local notification"
-        content.sound = .default
+        
+        
+        var unS = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "coin"))
+        content.sound = unS
+        
+        var numberOfSecondsUntilDate = 3
+        
         
         let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats: false)
         
@@ -168,7 +243,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         
     }
     
-
+    @IBAction func editButton(_ sender: Any) {
+        convertTime(time: "2:30:30 PM")
+    }
+    
     func sortAlarms() {
         
         

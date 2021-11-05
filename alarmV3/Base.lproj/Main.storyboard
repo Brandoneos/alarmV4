@@ -31,6 +31,9 @@
                                             <navigationItem title="Alarm" id="wM9-lL-HhE">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="edit" id="VFK-Jc-fGh">
                                                     <color key="tintColor" red="0.42352941179999998" green="1" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="editButton:" destination="BYZ-38-t0r" id="uhj-TH-kdp"/>
+                                                    </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yed-3O-kcU">
                                                     <color key="tintColor" red="0.42352941176470588" green="1" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -619,7 +622,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alarm" catalog="system" width="32" height="32"/>
+        <image name="alarm" catalog="system" width="124" height="128"/>
         <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="timer" catalog="system" width="128" height="121"/>
