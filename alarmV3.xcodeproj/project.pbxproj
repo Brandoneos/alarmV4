@@ -11,6 +11,10 @@
 		F60769952720A39A00507A2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60769942720A39A00507A2A /* AVFoundation.framework */; };
 		F60769992720AB8700507A2A /* bowArrow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F60769982720AB8700507A2A /* bowArrow.mp3 */; };
 		F61A12A226FA696C007585D5 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61A12A126FA696C007585D5 /* Repeat.swift */; };
+		F659F7BC273B17D700FB8AD2 /* dogbarking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F659F7B8273B17D600FB8AD2 /* dogbarking.mp3 */; };
+		F659F7BD273B17D700FB8AD2 /* howl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F659F7B9273B17D600FB8AD2 /* howl.mp3 */; };
+		F659F7BE273B17D700FB8AD2 /* crickets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F659F7BA273B17D600FB8AD2 /* crickets.mp3 */; };
+		F659F7BF273B17D700FB8AD2 /* seagulls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F659F7BB273B17D700FB8AD2 /* seagulls.mp3 */; };
 		F65DD55826CEE2C3005CBDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55726CEE2C3005CBDF2 /* AppDelegate.swift */; };
 		F65DD55A26CEE2C3005CBDF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55926CEE2C3005CBDF2 /* SceneDelegate.swift */; };
 		F65DD55C26CEE2C3005CBDF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65DD55B26CEE2C3005CBDF2 /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 		F60769942720A39A00507A2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F60769982720AB8700507A2A /* bowArrow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bowArrow.mp3; sourceTree = "<group>"; };
 		F61A12A126FA696C007585D5 /* Repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
+		F659F7B8273B17D600FB8AD2 /* dogbarking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dogbarking.mp3; sourceTree = "<group>"; };
+		F659F7B9273B17D600FB8AD2 /* howl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = howl.mp3; sourceTree = "<group>"; };
+		F659F7BA273B17D600FB8AD2 /* crickets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crickets.mp3; sourceTree = "<group>"; };
+		F659F7BB273B17D700FB8AD2 /* seagulls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = seagulls.mp3; sourceTree = "<group>"; };
 		F65DD55426CEE2C3005CBDF2 /* alarmV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alarmV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65DD55726CEE2C3005CBDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F65DD55926CEE2C3005CBDF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 		F607698E27209E6800507A2A /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F659F7BA273B17D600FB8AD2 /* crickets.mp3 */,
+				F659F7B8273B17D600FB8AD2 /* dogbarking.mp3 */,
+				F659F7B9273B17D600FB8AD2 /* howl.mp3 */,
+				F659F7BB273B17D700FB8AD2 /* seagulls.mp3 */,
 				F60769912720A00F00507A2A /* coin.mp3 */,
 				F60769982720AB8700507A2A /* bowArrow.mp3 */,
 			);
@@ -275,11 +287,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F659F7BD273B17D700FB8AD2 /* howl.mp3 in Resources */,
+				F659F7BC273B17D700FB8AD2 /* dogbarking.mp3 in Resources */,
 				F65DD56426CEE2C5005CBDF2 /* LaunchScreen.storyboard in Resources */,
 				F6CCB5E62723433D000C725F /* MyTableViewCell.xib in Resources */,
 				F65DD56126CEE2C5005CBDF2 /* Assets.xcassets in Resources */,
 				F60769992720AB8700507A2A /* bowArrow.mp3 in Resources */,
+				F659F7BE273B17D700FB8AD2 /* crickets.mp3 in Resources */,
 				F65DD55F26CEE2C3005CBDF2 /* Main.storyboard in Resources */,
+				F659F7BF273B17D700FB8AD2 /* seagulls.mp3 in Resources */,
 				F60769922720A00F00507A2A /* coin.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
