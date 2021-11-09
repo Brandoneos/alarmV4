@@ -91,13 +91,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         //
     }
     
-    func convertTime(time:String)-> Int {
+    
+    func getSeconds(time:(Int,Int,Int)) -> Int {
+        var hours = time.0 * 3600
+        var minutes = time.1 * 60
+        var seconds = time.2
+        
+        var totalSeconds = hours + minutes + seconds
+        
+        return totalSeconds
+    }
+    
+    func convertTime(time:String)-> (Int, Int, Int) {
         
         var t2 = time
-        
-        
-        
-        
         
         var sign = 0
         var arrayT:[String] = []
@@ -147,16 +154,20 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
         }
         
-        print(time)
-        print(t2)
-        print(arrayT)
-        print(arrayTI)
         
         
         
+        var s = 60
         
-        var seconds = 60
-        return 3
+        var hours:String = "\(arrayTI[0])\(arrayTI[1])"
+        var hours1 = Int(hours)!
+        var minutes:String = "\(arrayTI[2])\(arrayTI[3])"
+        var minutes1 = Int(minutes)!
+        var seconds:String = "\(arrayTI[4])\(arrayTI[5])"
+        var seconds1 = Int(seconds)!
+        
+        
+        return (hours1,minutes1,seconds1)
     }
     
     func transferData(Usegue: UIStoryboardSegue) {
@@ -166,13 +177,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         receivedRepeatCollection = addalarmViewCon.selectionsPassed
         
         var date1 = addalarmViewCon.timeView.date
+        var datecurrent = Date.now
         
         //If statement for which button was pressed(Save or Canceled)
         var soundT = addalarmViewCon.soundTitle
         let formatter = DateFormatter()
         formatter.timeStyle = .medium
         let datetime = formatter.string(from: date1)
-            
+        var currentFormTime = formatter.string(from: datecurrent)
             
             receivedTime = datetime
             
@@ -194,7 +206,16 @@ class ViewController: UIViewController, UITableViewDataSource {
 
             }
             
-            var endInt = Int(endString)!
+            
+        var endS = convertTime(time: datetime)
+        var currentS = convertTime(time: currentFormTime)
+        
+        var secondsTil = getSeconds(time: endS) - getSeconds(time: currentS)
+        if secondsTil <= 0 {
+            secondsTil += 24*3600
+        }
+        print(secondsTil)
+        
             
         var newAlarm = Alarm(name: te, time: datetime, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
         
@@ -205,13 +226,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         content.body = "This is a local notification"
         
         
-        var unS = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "coin"))
+        var unS = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "coin.mp3"))
         content.sound = unS
         
-        var numberOfSecondsUntilDate = 3
-        
-        
-        let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats: false)
+        let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(secondsTil), repeats: false)
         
         let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
         
@@ -237,14 +255,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func unwindSave(unwindSegue: UIStoryboardSegue) {
         
-        
         transferData(Usegue: unwindSegue)
-        
         
     }
     
     @IBAction func editButton(_ sender: Any) {
-        convertTime(time: "2:30:30 PM")
+        
     }
     
     func sortAlarms() {
