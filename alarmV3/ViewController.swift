@@ -97,7 +97,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     
-    func getSeconds(time:(Int,Int,Int)) -> Int {
+    func getSeconds(time:(Int,Int,Int,String)) -> Int {
         var hours = time.0 * 3600
         var minutes = time.1 * 60
         var seconds = time.2
@@ -107,7 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         return totalSeconds
     }
     
-    func convertTime(time:String)-> (Int, Int, Int) {
+    func convertTime(time:String, ind:Int)-> (Int, Int, Int,String) {
         
         var t2 = time
         
@@ -145,34 +145,47 @@ class ViewController: UIViewController, UITableViewDataSource {
             arrayTI.append(ii)
         }
         
+        var hourString = arrayT[0] + arrayT[1]
         if sign == 1 {
             
-            if arrayTI[0] != 1 && arrayTI[1] != 2 {
+            if hourString != "12" {
                 arrayTI[0] = arrayTI[0] + 1
                 arrayTI[1] = arrayTI[1] + 2
+            } else {
+                
             }
-        } else {
             
-            if arrayTI[0] == 1 && arrayTI[1] == 2 {
+            
+        } else {
+            if hourString != "12" {
+                
+            } else {
                 arrayTI[0] = arrayTI[0] - 1
                 arrayTI[1] = arrayTI[1] - 2
             }
         }
         
-        
-        
+        var c1 = arrayTI[0] + arrayTI[1]
+        var c2 = arrayTI[2] + arrayTI[3]
+        var cellString = "\(c1):\(c2)"
         
         var s = 60
         
         var hours:String = "\(arrayTI[0])\(arrayTI[1])"
         var hours1 = Int(hours)!
+        
         var minutes:String = "\(arrayTI[2])\(arrayTI[3])"
         var minutes1 = Int(minutes)!
+        
         var seconds:String = "\(arrayTI[4])\(arrayTI[5])"
         var seconds1 = Int(seconds)!
         
         
-        return (hours1,minutes1,seconds1)
+        if ind == 1 {
+            seconds1 = 0
+        }
+        
+        return (hours1,minutes1,seconds1, cellString)
     }
     
     func transferData(Usegue: UIStoryboardSegue) {
@@ -182,7 +195,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         receivedRepeatCollection = addalarmViewCon.selectionsPassed
         
         var date1 = addalarmViewCon.timeView.date
+        
         var datecurrent = Date.now
+        
         
         //If statement for which button was pressed(Save or Canceled)
         var soundT = addalarmViewCon.soundTitle
@@ -212,17 +227,23 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
             
             
-        var endS = convertTime(time: datetime)
-        var currentS = convertTime(time: currentFormTime)
+        var endS = convertTime(time: datetime, ind:1)
+        var currentS = convertTime(time: currentFormTime, ind:0)
         
         var secondsTil = getSeconds(time: endS) - getSeconds(time: currentS)
         if secondsTil <= 0 {
             secondsTil += 24*3600
         }
-        print(secondsTil)
+        
+        
+        var cString = endS.3
+       
+        
+        
         
             
-        var newAlarm = Alarm(name: te, time: datetime, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
+        var newAlarm = Alarm(name: te, time: cString, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
+        
         
         let center = UNUserNotificationCenter.current()
         
