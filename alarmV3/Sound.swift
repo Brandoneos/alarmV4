@@ -13,7 +13,7 @@ import AudioToolbox
 
 
 class Sound:UIViewController, UITableViewDataSource {
-    var sounds:[String] = ["coin", "bowArrow"]
+    var sounds:[String] = ["coin", "bowArrow","seagulls", "howl", "dogbarking", "crickets"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,6 +44,7 @@ class Sound:UIViewController, UITableViewDataSource {
         navBar.barTintColor = UIColor.white
         
     }
+    
     func audioPlay(soundName:String, fileType:String) {
         let sound = Bundle.main.path(forResource: soundName, ofType: fileType)
         
@@ -84,7 +85,9 @@ class Sound:UIViewController, UITableViewDataSource {
         var image = UIImage(systemName: "checkmark")
         var image2 = UIImage(systemName: "poweroff")
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier) as! MyTableViewCell
+        
         for i in sounds {
             cell.removeFromSuperview()
             
@@ -114,6 +117,7 @@ class Sound:UIViewController, UITableViewDataSource {
         
         if selectedSound == "" {
             VC1.soundButton.setTitle("Sound"  + "(coin)", for: .normal)
+            
         } else {
             defaults1.set(VC1.soundTitle, forKey: "soundTitle")
             VC1.soundButton.setTitle("Sound" + "(" + "\(VC1.soundTitle)" + ")", for: .normal)
@@ -146,8 +150,28 @@ extension Sound: MyTableViewCellDelegate {
         //I need to reset all the images of the buttons
         
         selectedSound = title
+        performSegue(withIdentifier: "unwindSoundID", sender: Any?.self)
         
         
+        
+        
+    }
+    
+    func changeButtonImages()  {
+        var image = UIImage(systemName: "checkmark")
+        var image2 = UIImage(systemName: "poweroff")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier) as! MyTableViewCell
+        
+        
+        for i in sounds {
+            cell.button.imageView?.image = image2
+            
+        }
+        
+        
+        tableView.reloadData()
+        tableView.reloadInputViews()
         
         
     }

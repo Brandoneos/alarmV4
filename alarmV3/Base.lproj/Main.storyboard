@@ -124,7 +124,7 @@
                                             <color key="tintColor" red="0.42352941179999998" green="1" blue="0.76534718629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="myUnwindDoerWithUnwindSegue:" destination="oMb-gx-Oge" id="CNc-Ah-vRX"/>
-                                                <segue destination="Hof-j8-9NW" kind="unwind" unwindAction="myUnwindSoundWithUnwindSegue:" id="yqT-KJ-vGB"/>
+                                                <segue destination="Hof-j8-9NW" kind="unwind" identifier="unwindSoundID" unwindAction="myUnwindSoundWithUnwindSegue:" id="yqT-KJ-vGB"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Ovy-K2-iPi">
@@ -237,7 +237,7 @@
                                                 <color key="tintColor" red="0.42352941179999998" green="1" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <buttonConfiguration key="configuration" style="tinted">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="Sound(Radar)">
+                                                        <fragment content="Sound(coin)">
                                                             <attributes>
                                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <font key="NSFont" size="15" name="Helvetica"/>

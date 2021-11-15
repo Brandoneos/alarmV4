@@ -12,6 +12,7 @@ protocol MyTableViewCellDelegate: AnyObject {
     //-> Int
 //    func getSounds() -> [String]
     func resetView()
+    func changeButtonImages()
     
 }
 
@@ -37,24 +38,24 @@ class MyTableViewCell: UITableViewCell {
         
 //        delegate?.resetView()
         delegate?.buttonClicked(with: title)
-
-       clicked = !clicked
+        
+        clicked = !clicked
+        var previousSelection = defaults1.string(forKey: "selectedSound")
+//        delegate?.changeButtonImages()
+        
+        defaults1.set(title, forKey: "selectedSound")
         
         var image = UIImage(systemName: "checkmark")
         var image2 = UIImage(systemName: "poweroff")
         
+//        if clicked {
+//            button.setImage(image, for: .normal)
+//        } else {
+//            button.setImage(image2, for: .normal)
+//        }
         
-        
-        
-        if clicked {
-            button.setImage(image, for: .normal)
-        } else {
-            button.setImage(image2, for: .normal)
-        }
-        
-        
-
-        
+        button.setImage(image, for: .normal)
+        //centerfold
         
         
     }

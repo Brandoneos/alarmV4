@@ -82,9 +82,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         defaults1.set(false, forKey: "selection6")
         defaults1.set(false, forKey: "selection7")
     }
+    func resetSound() {
+        
+        defaults1.set("coin", forKey: "soundTitle")
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         resetRepeats()
+        
         
         
         
@@ -225,8 +230,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         content.title = newAlarm.name
         content.body = "This is a local notification"
         
-        
-        var unS = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "coin.mp3"))
+        var soundString = soundT + ".mp3"
+        var unS = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: soundString))
         content.sound = unS
         
         let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(secondsTil), repeats: false)
