@@ -199,8 +199,40 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         var datecurrent = Date.now
         
+        //getting array
+        var ind = 1
+        for i in daysOF {
+            var tString = "selection\(ind)"
+            var sel = defaults1.bool(forKey: tString)
+            if sel {
+                addalarmViewCon.emptyArray[ind-1] = ind
+            }
+            ind += 1
+            
+        }
+        var intt = 0
+        ind = 1
+        for i in addalarmViewCon.emptyArray {
+            if i > 0 {
+                addalarmViewCon.emptyArray[intt] = ind
+            }
+            ind += 1
+            intt += 1
+        }
         
-        //If statement for which button was pressed(Save or Canceled)
+        print(addalarmViewCon.emptyArray)
+        var newImprovedArray:[Int] = []
+        for i in addalarmViewCon.emptyArray {
+            if i != 0 {
+                newImprovedArray.append(i)
+            }
+            
+        }
+        print(newImprovedArray)
+        
+        
+        
+        //.
         var soundT = addalarmViewCon.soundTitle
         let formatter = DateFormatter()
         formatter.timeStyle = .medium
@@ -243,7 +275,7 @@ class ViewController: UIViewController, UITableViewDataSource {
        
             
         var newAlarm = Alarm(name: te, time: cString, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
-        print(soundT)
+        
         
         let center = UNUserNotificationCenter.current()
         
@@ -252,18 +284,53 @@ class ViewController: UIViewController, UITableViewDataSource {
         content.body = "This is a local notification"
         
         var soundString = soundT + ".mp3"
+        
         var unS = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: soundString))
         content.sound = unS
         
-        let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(secondsTil), repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
-        
-        center.add(request) { error in
-            if error != nil {
-                print("Error = \(error?.localizedDescription ?? "error local notification")")
+        if newImprovedArray.isEmpty {
+            let trigger  = UNTimeIntervalNotificationTrigger(timeInterval:TimeInterval(secondsTil), repeats: false)
+            let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+            center.add(request) { error in
+                if error != nil {
+                    print("Error = \(error?.localizedDescription ?? "error local notification")")
+                }
             }
+        } else {
+            
+            for i in newImprovedArray {
+                var intt = i
+                
+                
+                var date = DateComponents()
+                date.calendar = Calendar.current
+                
+                
+                
+                date.weekday = intt
+                date.hour = endS.0
+                date.minute = endS.1
+                
+                
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+                let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+                center.add(request) { error in
+                    if error != nil {
+                        print("Error = \(error?.localizedDescription ?? "error local notification")")
+                    }
+                }
+                
+                
+                
+            }
+            
         }
+        
+        
+        
+        
+        
             alarms.append(newAlarm)
             
             myTableView.reloadData()
