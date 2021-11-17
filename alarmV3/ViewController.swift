@@ -167,7 +167,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         var c1 = arrayTI[0] + arrayTI[1]
         var c2 = arrayTI[2] + arrayTI[3]
-        var cellString = "\(c1):\(c2)"
+        
+        
         
         var s = 60
         
@@ -184,7 +185,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         if ind == 1 {
             seconds1 = 0
         }
-        
+        var cellString = "\(hours1):\(minutes1)"
         return (hours1,minutes1,seconds1, cellString)
     }
     
@@ -230,20 +231,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         var endS = convertTime(time: datetime, ind:1)
         var currentS = convertTime(time: currentFormTime, ind:0)
         
+        
         var secondsTil = getSeconds(time: endS) - getSeconds(time: currentS)
         if secondsTil <= 0 {
             secondsTil += 24*3600
+            
         }
         
         
         var cString = endS.3
        
-        
-        
-        
             
         var newAlarm = Alarm(name: te, time: cString, onOff: true, switchSchedule: 0, weekly: addalarmViewCon.emptyArray, sound: soundT)
-        
+        print(soundT)
         
         let center = UNUserNotificationCenter.current()
         
